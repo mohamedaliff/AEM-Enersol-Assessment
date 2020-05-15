@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AEM_Enersol_Assessment.Models
@@ -18,9 +19,9 @@ namespace AEM_Enersol_Assessment.Models
 
         public float Longitude { get; set; }
 
-        public string CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
-        public string UpdatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
 
     }
 }

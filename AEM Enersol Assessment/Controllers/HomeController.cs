@@ -163,8 +163,8 @@ namespace AEM_Enersol_Assessment.Controllers
                     var dataPlatform = await _context.Platform.FirstOrDefaultAsync(m => m.ID == id);
                     dataPlatform.Latitude = platform.Latitude;
                     dataPlatform.Longitude = platform.Longitude;
-                    dataPlatform.CreatedAt = platform.CreatedAt;
-                    dataPlatform.UpdatedAt = platform.UpdatedAt;
+                    dataPlatform.CreatedAt = Convert.ToDateTime(platform.CreatedAt);
+                    dataPlatform.UpdatedAt = Convert.ToDateTime(platform.UpdatedAt);
 
                     _context.Attach(dataPlatform).State = EntityState.Modified;
 
@@ -184,8 +184,8 @@ namespace AEM_Enersol_Assessment.Controllers
                             dataWells[i].UniqueName = platform.Well[i].UniqueName;
                             dataWells[i].Latitude = platform.Well[i].Latitude;
                             dataWells[i].Longitude = platform.Well[i].Longitude;
-                            dataWells[i].CreatedAt = platform.Well[i].CreatedAt;
-                            dataWells[i].UpdatedAt = platform.Well[i].UpdatedAt;
+                            dataWells[i].CreatedAt = Convert.ToDateTime(platform.Well[i].CreatedAt);
+                            dataWells[i].UpdatedAt = Convert.ToDateTime(platform.Well[i].UpdatedAt);
 
                             _context.Attach(dataWells[i]).State = EntityState.Modified;
 
